@@ -57,9 +57,11 @@ img.align-center {
 }
 img.align-right {
   float: right;
+  padding-left: 16px;
 }
 img.align-left{
   float: left;
+  padding-right: 16px;
 }
 aside div#user_meta {
   padding-top: 90px;
