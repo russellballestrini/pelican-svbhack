@@ -63,6 +63,9 @@ img.align-left{
   float: left;
   padding-right: 16px;
 }
+img.logo{
+  width: 125px;
+}
 aside div#user_meta {
   padding-top: 90px;
   padding-left: 60px;
