@@ -15,10 +15,13 @@
   var thread_title = window.document.title;
   var thread_fragment = window.location.hash;
 
-  var rb_src = "https://my.remarkbox.com/embed" +
+  // rb owner was here.
+  var rb_src = "https://my.remarkbox.com/embed" + 
       "?rb_owner_key=" + rb_owner_key +
-      "&thread_title=" + escape(thread_title) +
-      "&thread_uri=" + encodeURIComponent(thread_uri);
+      "&thread_title=" + encodeURI(thread_title) +
+      "&thread_uri=" + encodeURIComponent(thread_uri) + 
+      thread_fragment;
+
 
   function create_remarkbox_iframe() {
     var ifrm = document.createElement("iframe");
