@@ -28,6 +28,8 @@ Clone the [repository](https://github.com/russellballestrini/pelican-svbhack), e
 
 Supports a number of common global variables but patches are welcomed if you need better support.
 
+- `PLAUSIBLE_ANALYTICS` to use Plausible Analytics, set this var to your plausible domain name. 
+
 - `GOOGLE_ANALYTICS` to use Google Analytics, set this var to your UA-XYZ code
 
 - `USER_LOGO_URL` to replace the logo placeholder, put your logo in content/images/your_logo.png and make this var point to `SITEURL + '/static/images/your_logo.png'`
