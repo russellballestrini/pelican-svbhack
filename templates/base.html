@@ -15,6 +15,9 @@
   <meta name="author" content="{{ AUTHOR }}">
   <meta name="description" content="Father. Husband. Grows Product & Services. Permaculture. Founder https://www.remarkbox.com & https://www.makepostsell.com. Engineer. Computing Scientist. Gardener. I AM in a BEGINNING.">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/a11y-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
   {% if FEED_ALL_ATOM %}
   <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom" />
   {% endif %}
@@ -30,6 +33,7 @@
     {{ SITENAME }}
   </title>
 
+  <script src="https://uncloseai.com/uncloseai.js" type="module"></script>
   {% include "modules/analytics.html" %}
 </head>
 
