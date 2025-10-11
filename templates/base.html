@@ -176,6 +176,25 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
         if (mobileButton) mobileButton.textContent = 'Dark';
         localStorage.setItem('theme', 'light');
       }
+
+      // Reload Remarkbox iframe with new theme mode
+      const remarkboxIframe = document.getElementById('remarkbox-iframe');
+      if (remarkboxIframe) {
+        const currentSrc = remarkboxIframe.src;
+        const newMode = localStorage.getItem('theme') || 'dark';
+        const newModeParam = (newMode === 'dark') ? 'mode=dark' : 'mode=light';
+
+        // Replace existing mode parameter or add it
+        let newSrc;
+        if (currentSrc.includes('mode=')) {
+          newSrc = currentSrc.replace(/mode=(dark|light)/, newModeParam);
+        } else {
+          const separator = currentSrc.includes('?') ? '&' : '?';
+          newSrc = currentSrc.split('#')[0] + separator + newModeParam + (currentSrc.includes('#') ? '#' + currentSrc.split('#')[1] : '');
+        }
+
+        remarkboxIframe.src = newSrc;
+      }
     }
 
     // Update button text immediately when they're available

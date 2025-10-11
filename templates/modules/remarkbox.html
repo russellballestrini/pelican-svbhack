@@ -5,7 +5,7 @@
 <div id="remarkbox-div">
   <h4>Remarks: {{ article.title }}</h4>
   <noscript>
-    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
+    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true&mode=dark" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
   </noscript>
 </div>
 <script src="https://my.remarkbox.com/static/js/iframe-resizer/iframeResizer.min.js"></script>
@@ -15,11 +15,16 @@
   var thread_title = window.document.title;
   var thread_fragment = window.location.hash;
 
+  // Detect current theme mode
+  var theme_mode = localStorage.getItem('theme') || 'dark';
+  var mode_param = (theme_mode === 'dark') ? '&mode=dark' : '&mode=light';
+
   // rb owner was here.
-  var rb_src = "https://my.remarkbox.com/embed" + 
+  var rb_src = "https://my.remarkbox.com/embed" +
       "?rb_owner_key=" + rb_owner_key +
       "&thread_title=" + encodeURI(thread_title) +
-      "&thread_uri=" + encodeURIComponent(thread_uri) + 
+      "&thread_uri=" + encodeURIComponent(thread_uri) +
+      mode_param +
       thread_fragment;
 
 
