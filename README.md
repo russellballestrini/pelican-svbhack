@@ -10,9 +10,15 @@ You can see the [theme in action](http://russell.ballestrini.net/).
 
 ## FEATURES
 
-- responsive
+- responsive design with mobile and desktop layouts
+- dark mode (default) with light mode toggle
+- theme preference saved to localStorage
+- right sidebar table of contents on article pages (desktop only)
 - syntax highlighting for pre blocks
-- supports google analytics
+- supports Google Analytics
+- supports Plausible Analytics
+- supports Remarkbox comments
+- supports UncloseAI widget integration
 - custom list of links
 
 ## KNOWN ISSUES
@@ -28,17 +34,27 @@ Clone the [repository](https://github.com/russellballestrini/pelican-svbhack), e
 
 Supports a number of common global variables but patches are welcomed if you need better support.
 
-- `PLAUSIBLE_ANALYTICS` to use Plausible Analytics, set this var to your plausible domain name. 
+### Analytics & Services
 
-- `GOOGLE_ANALYTICS` to use Google Analytics, set this var to your UA-XYZ code
+- `GOOGLE_ANALYTICS` - set to your UA-XYZ code to enable Google Analytics tracking
 
-- `USER_LOGO_URL` to replace the logo placeholder, put your logo in content/images/your_logo.png and make this var point to `SITEURL + '/static/images/your_logo.png'`
+- `PLAUSIBLE_ANALYTICS` - set to your plausible domain name to enable Plausible Analytics
 
-- `REMARKBOX` set this to true to enable [Remarkbox.com](http://www.remarkbox.com) comments in articles
+- `REMARKBOX` - set to true to enable [Remarkbox.com](http://www.remarkbox.com) comments in articles
 
-- `TAGLINE` some text rendered right below the logo
+### Appearance
 
-When developing locally, you may want to set the following variable: `SITEURL = http://localhost:8000`
+- `USER_LOGO_URL` - replace the logo placeholder by putting your logo in content/images/your_logo.png and setting this to `SITEURL + '/static/images/your_logo.png'`
+
+- `TAGLINE` - text rendered right below the logo
+
+### Development
+
+When developing locally, set: `SITEURL = http://localhost:8000`
+
+### Third-Party Integrations
+
+The theme automatically supports [UncloseAI](https://uncloseai.com) widget integration via the included script tag in base.html. The widget styling adapts to the dark/light theme automatically.
 
 ## MODIFICATIONS
 

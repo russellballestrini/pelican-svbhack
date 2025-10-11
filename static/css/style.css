@@ -275,14 +275,18 @@ main header form {
 }
 
 /* UncloseAI styling - inverted colors */
-unclose-ai {
-  --background-color: var(--color-white) !important;
-  --text-color: var(--color-black) !important;
+.uncloseai-floating-button,
+#floating-ai-button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
-:root.light-mode unclose-ai {
-  --background-color: var(--color-black) !important;
-  --text-color: var(--color-white) !important;
+:root.light-mode .uncloseai-floating-button,
+:root.light-mode #floating-ai-button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
 }
 
 span.avoidwrap {
@@ -415,7 +419,12 @@ a.advert:hover {
   main article {
     max-width: 100%;
     width: 660px;
-    padding-top: 40px;
+    padding-top: 0;
+  }
+
+  /* First article on homepage needs padding for fixed header */
+  main article:first-of-type {
+    padding-top: 110px;
   }
 
   main article div.article_title h1 {

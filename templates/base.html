@@ -33,6 +33,16 @@
     {{ SITENAME }}
   </title>
 
+  <!-- Prevent flash of dark mode - must run before page renders -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+
   <script src="https://uncloseai.com/uncloseai.js" type="module"></script>
   {% include "modules/analytics.html" %}
 </head>
@@ -165,19 +175,17 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
       }
     }
 
-    // Load saved theme on page load
-    document.addEventListener('DOMContentLoaded', function() {
+    // Update button text immediately when they're available
+    (function() {
       const savedTheme = localStorage.getItem('theme');
-      const root = document.documentElement;
-      const desktopButton = document.getElementById('theme-toggle');
-      const mobileButton = document.getElementById('mobile-theme-toggle');
-
       if (savedTheme === 'light') {
-        root.classList.add('light-mode');
+        // Buttons are now in DOM, update them immediately
+        const desktopButton = document.getElementById('theme-toggle');
+        const mobileButton = document.getElementById('mobile-theme-toggle');
         if (desktopButton) desktopButton.textContent = 'Dark';
         if (mobileButton) mobileButton.textContent = 'Dark';
       }
-    });
+    })();
   </script>
 </body>
 </html>
