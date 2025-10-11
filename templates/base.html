@@ -90,7 +90,8 @@
           <input type="hidden" name="sites" value="{{ SITEURL }}"/>
           <input type="submit" value="Search" style="display: none;" />
           <input type="text" name="q" maxlength="255" placeholder="Search" id="search-box"/>
-      </form>{% block header %}{% endblock header %}
+      </form>
+      <button id="theme-toggle" type="button" onclick="toggleTheme()">Light</button>{% block header %}{% endblock header %}
     </header>
 
     <div id="main-content">
@@ -127,5 +128,34 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
 
   </main>
   {% include "modules/idl.html" %}
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const button = document.getElementById('theme-toggle');
+
+      if (root.classList.contains('light-mode')) {
+        root.classList.remove('light-mode');
+        button.textContent = 'Light';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.classList.add('light-mode');
+        button.textContent = 'Dark';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const root = document.documentElement;
+      const button = document.getElementById('theme-toggle');
+
+      if (savedTheme === 'light') {
+        root.classList.add('light-mode');
+        button.textContent = 'Dark';
+      }
+    });
+  </script>
 </body>
 </html>

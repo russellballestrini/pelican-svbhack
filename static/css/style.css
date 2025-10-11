@@ -1,5 +1,21 @@
 :root {
-  /* Color palette */
+  /* Dark mode colors (default) */
+  --color-white: #1a1a1a;
+  --color-black: #e8e8e8;
+  --color-text: #d0d0d0;
+  --color-text-light: #888888;
+  --color-border: #333333;
+  --color-border-dark: #444444;
+  --color-border-code: #2a2a2a;
+  --color-bg-light: #222222;
+  --color-link: #4a9eff;
+  --color-link-hover: #6bb0ff;
+  --color-accent-red: #ff5555;
+  --color-accent-red-hover: #ff7777;
+}
+
+/* Light mode colors */
+:root.light-mode {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-text: #4d4d4d;
@@ -239,6 +255,25 @@ p.topic-title {
 main header form {
   display: inline;
   white-space: nowrap;
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--color-border-dark);
+  border-radius: 4px;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#theme-toggle:hover {
+  border-color: var(--color-link);
+  color: var(--color-link);
 }
 
 span.avoidwrap {
