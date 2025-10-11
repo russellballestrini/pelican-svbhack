@@ -434,11 +434,6 @@ a.advert:hover {
     padding-top: 0;
   }
 
-  /* First article on homepage needs padding for fixed header */
-  main article:first-of-type {
-    padding-top: 110px;
-  }
-
   main article div.article_title h1 {
     padding-top: 15px;
   }
