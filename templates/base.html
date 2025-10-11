@@ -149,15 +149,18 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
   <script>
     function toggleTheme() {
       const root = document.documentElement;
-      const button = document.getElementById('theme-toggle');
+      const desktopButton = document.getElementById('theme-toggle');
+      const mobileButton = document.getElementById('mobile-theme-toggle');
 
       if (root.classList.contains('light-mode')) {
         root.classList.remove('light-mode');
-        button.textContent = 'Light';
+        if (desktopButton) desktopButton.textContent = 'Light';
+        if (mobileButton) mobileButton.textContent = 'Light';
         localStorage.setItem('theme', 'dark');
       } else {
         root.classList.add('light-mode');
-        button.textContent = 'Dark';
+        if (desktopButton) desktopButton.textContent = 'Dark';
+        if (mobileButton) mobileButton.textContent = 'Dark';
         localStorage.setItem('theme', 'light');
       }
     }
@@ -166,11 +169,13 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
     document.addEventListener('DOMContentLoaded', function() {
       const savedTheme = localStorage.getItem('theme');
       const root = document.documentElement;
-      const button = document.getElementById('theme-toggle');
+      const desktopButton = document.getElementById('theme-toggle');
+      const mobileButton = document.getElementById('mobile-theme-toggle');
 
       if (savedTheme === 'light') {
         root.classList.add('light-mode');
-        button.textContent = 'Dark';
+        if (desktopButton) desktopButton.textContent = 'Dark';
+        if (mobileButton) mobileButton.textContent = 'Dark';
       }
     });
   </script>
