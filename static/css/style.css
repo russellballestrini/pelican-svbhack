@@ -30,6 +30,18 @@
   --color-accent-red-hover: #d40000;
 }
 
+/* Hide theme toggle buttons when JavaScript is disabled */
+#theme-toggle,
+#mobile-theme-toggle {
+  display: none;
+}
+
+/* Show theme toggle buttons when JavaScript is enabled */
+.js-enabled #theme-toggle,
+.js-enabled #mobile-theme-toggle {
+  display: inline-block;
+}
+
 body {
   margin: 0;
   padding: 0;

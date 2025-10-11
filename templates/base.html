@@ -36,6 +36,9 @@
   <!-- Prevent flash of dark mode - must run before page renders -->
   <script>
     (function() {
+      // Add js-enabled class to show theme toggle buttons
+      document.documentElement.classList.add('js-enabled');
+
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'light') {
         document.documentElement.classList.add('light-mode');
