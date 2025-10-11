@@ -274,6 +274,17 @@ main header form {
   display: none;
 }
 
+/* UncloseAI styling - inverted colors */
+unclose-ai {
+  --background-color: var(--color-white) !important;
+  --text-color: var(--color-black) !important;
+}
+
+:root.light-mode unclose-ai {
+  --background-color: var(--color-black) !important;
+  --text-color: var(--color-white) !important;
+}
+
 span.avoidwrap {
   display:inline-block;
 }
