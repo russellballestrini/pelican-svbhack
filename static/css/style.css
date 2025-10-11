@@ -132,11 +132,6 @@ main header {
   padding: 18px 5% 18px;
   border-bottom: var(--color-border) 1px solid;
   border-top: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: var(--color-white);
-  z-index: 100;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
@@ -144,7 +139,6 @@ main header {
 main article {
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 40px;
 }
 main article div.article_text {
   line-height: 1.8em;
@@ -375,6 +369,13 @@ a.advert:hover {
     overflow-x: hidden;
     overflow-y: hidden;
   }
+  main header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    z-index: 100;
+  }
   main #main-content {
     max-width: 100%;
     width: 660px;
@@ -382,6 +383,7 @@ a.advert:hover {
   main article {
     max-width: 100%;
     width: 660px;
+    padding-top: 40px;
   }
 
   main article div.article_title h1 {
