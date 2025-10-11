@@ -275,14 +275,18 @@ main header form {
 }
 
 /* UncloseAI styling - inverted colors */
-unclose-ai {
-  --background-color: var(--color-white) !important;
-  --text-color: var(--color-black) !important;
+.uncloseai-floating-button,
+#floating-ai-button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
-:root.light-mode unclose-ai {
-  --background-color: var(--color-black) !important;
-  --text-color: var(--color-white) !important;
+:root.light-mode .uncloseai-floating-button,
+:root.light-mode #floating-ai-button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
 }
 
 span.avoidwrap {
