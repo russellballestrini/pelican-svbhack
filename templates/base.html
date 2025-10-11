@@ -37,7 +37,7 @@
   {% include "modules/analytics.html" %}
 </head>
 
-<body>
+<body{% block body_class %}{% endblock %}>
   <aside>
     <div id="user_meta">
       <a href="{{ SITEURL }}">
@@ -74,12 +74,6 @@
 
   <main>
     <header>
-      <form method="get" id="search" action="https://duckduckgo.com/">
-          <input type="hidden" name="sites" value="{{ SITEURL }}"/>
-          <input type="submit" value="Search" style="display: none;" />
-          <input type="text" name="q" maxlength="255" placeholder="Search" id="search-box"/>
-      </form>
-      <p>
       <!-- <a href="{{ SITEURL }}">{{ SITEURL }}</a> &nbsp; &bull; &nbsp; -->
       <a href="{{ SITEURL }}/random.html">Random</a>
       &nbsp; &bull; &nbsp; <a href="{{ SITEURL }}/archives.html">Archives</a>
@@ -91,14 +85,18 @@
       {% endif %}
       &nbsp; &bull; &nbsp; <a href="{{ SITEURL }}/about/">About</a>
       &nbsp; &bull; &nbsp; <a href="{{ SITEURL }}/contact/">Contact</a>
-      {% block header %}
-      {% endblock header %}
-      </p>
+      &nbsp; &bull; &nbsp;
+      <form method="get" id="search" action="https://duckduckgo.com/" style="display: inline;">
+          <input type="hidden" name="sites" value="{{ SITEURL }}"/>
+          <input type="submit" value="Search" style="display: none;" />
+          <input type="text" name="q" maxlength="255" placeholder="Search" id="search-box"/>
+      </form>{% block header %}{% endblock header %}
     </header>
 
-    {% block content %}
-    {% endblock %}
-
+    <div id="main-content">
+      {% block content %}
+      {% endblock %}
+    </div>
 
     <footer>
     {% block footer %}
