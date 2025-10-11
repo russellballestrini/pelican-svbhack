@@ -1,8 +1,24 @@
+:root {
+  /* Color palette */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text: #4d4d4d;
+  --color-text-light: #999999;
+  --color-border: #eeeeee;
+  --color-border-dark: #bbbbbb;
+  --color-border-code: #e1e4e5;
+  --color-bg-light: #FAFAFA;
+  --color-link: #0084B4;
+  --color-link-hover: #006699;
+  --color-accent-red: #AA0000;
+  --color-accent-red-hover: #d40000;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #4d4d4d;
+  background-color: var(--color-white);
+  color: var(--color-text);
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
 }
@@ -19,20 +35,20 @@ h5 { font-size: .83em; }
 h6 { font-size: .67em; }
 
 a {
-  color: #000000;
+  color: var(--color-black);
   text-decoration: none;
 }
 
 hr {
-  color: #eeeeee;
-  background-color: #eeeeee;
+  color: var(--color-border);
+  background-color: var(--color-border);
   height: 1px;
   border: none;
 }
 tt {
   font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
   font-size: .8em;
-  border: solid 1px #e1e4e5;
+  border: solid 1px var(--color-border-code);
   box-sizing: border-box;
   /*line-height: 24px;*/
   padding-top: 5px;
@@ -67,7 +83,7 @@ img.logo{
   width: 125px;
 }
 aside div#user_meta {
-  padding-top: 90px;
+  padding-top: 60px;
   padding-left: 60px;
   padding-right: 60px;
 }
@@ -90,20 +106,21 @@ aside div#user_meta ul li {
 }
 aside div#user_meta ul li a {
   padding: 5px 15px 5px 15px;
-  border: 3px solid #eeeeee;
+  border: 3px solid var(--color-border);
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  color: #999999;
+  color: var(--color-text-light);
 }
 main header {
-  padding: 5%;
-  padding-top: 58px;
-  padding-bottom: 58px;
-  border-bottom: #eeeeee 1px solid;
+  padding: 18px 5% 18px;
+  border-bottom: var(--color-border) 1px solid;
   border-top: 0;
-}
-main header p {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  z-index: 100;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
@@ -111,6 +128,7 @@ main header p {
 main article {
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 40px;
 }
 main article div.article_text {
   line-height: 1.8em;
@@ -118,7 +136,7 @@ main article div.article_text {
 
 main article div.article_text a,
 div.remarkbox-shoutout a {
-  color: #0084B4;
+  color: var(--color-link);
 }
 main article div.article_text .toc-backref {
   border-bottom: 0px;
@@ -126,30 +144,30 @@ main article div.article_text .toc-backref {
 main article div.article_text code {
   margin: 2px;
   padding: 0;
-  color: #000000;
+  color: var(--color-black);
   font-size: 14px;
   font-family: 'PT Mono', monospace;
-  background-color: #FAFAFA;
+  background-color: var(--color-bg-light);
 }
 main article div.article_text pre {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
   padding: 2%;
-  color: #000000;
-  border-left: 2px solid #0084B4;
+  color: var(--color-black);
+  border-left: 2px solid var(--color-link);
   font-size: 12px;
   font-family: 'PT Mono', monospace;
   line-height: 1.125em;
   overflow-x: auto;
   border-radius: 8px;
-  background-color: #FAFAFA;
+  background-color: var(--color-bg-light);
 }
 main article div.article_text blockquote {
   margin: 22px 2px 22px 2px;
   padding-left: 22px;
-  border-left: 2px solid #0084B4;
-  color: #999999;
+  border-left: 2px solid var(--color-link);
+  color: var(--color-text-light);
   font-style: italic;
 }
 main article div.gist {
@@ -157,24 +175,24 @@ main article div.gist {
 }
 main article div.article_meta {
   font-size: 12px;
-  color: #999999;
+  color: var(--color-text-light);
   float: right;
 }
 main footer {
-  border-top: #eeeeee 1px solid;
+  border-top: var(--color-border) 1px solid;
   padding: 40px;
-  background-color: #FAFAFA;
+  background-color: var(--color-bg-light);
 }
 
 main footer a {
-  border-bottom: 1px dotted #BBB;
+  border-bottom: 1px dotted var(--color-border-dark);
 }
 
 main div#ending_message {
   padding: 20px 40px 20px 40px;
-  color: #999999;
+  color: var(--color-text-light);
   font-size: 10px;
-  background-color: #FAFAFA;
+  background-color: var(--color-bg-light);
   text-align: right;
 }
 
@@ -182,13 +200,13 @@ main hr {
   margin-top: 50px;
 }
 
-/* table of contents */
+/* table of contents - inline default */
 div.contents {
   margin: 40px;
-  padding: 2%; 
+  padding: 2%;
   border-radius: 8px;
-  border-left: 2px solid #0084B4;
-  background-color: #FAFAFA;
+  border-left: 2px solid var(--color-link);
+  background-color: var(--color-bg-light);
 }
 p.topic-title {
   margin-top: 0px;
@@ -196,7 +214,7 @@ p.topic-title {
 /* table of contents end */
 
 .tagline {
-  border-bottom: 1px dotted #BBBBBB;
+  border-bottom: 1px dotted var(--color-border-dark);
 }
 
 .wordwrap-left {
@@ -209,34 +227,40 @@ p.topic-title {
 }
 
 #search-box {
-  border-color: #bbbbbb;
+  border-color: var(--color-border-dark);
   border-radius: 2px;
   border-width: 1px;
   border-style: solid;
   padding: .3em;
   width: 190px;
+  vertical-align: middle;
 }
 
-span.avoidwrap { 
+main header form {
+  display: inline;
+  white-space: nowrap;
+}
+
+span.avoidwrap {
   display:inline-block;
 }
 
 div.advert {
   font-size: .8em;
-  background-color: #fafafa;
+  background-color: var(--color-bg-light);
   padding: 20px;
   border-radius: 8px;
   text-align: left;
-  border-left: 2px solid #0084B4;
+  border-left: 2px solid var(--color-link);
 }
 
 a.advert {
-  color: #AA0000;
+  color: var(--color-accent-red);
   font-size: 1.2em;
 }
 
 a.advert:hover {
-  color: #d40000;
+  color: var(--color-accent-red-hover);
   font-size: 1.2em;
 }
 
@@ -296,7 +320,7 @@ a.advert:hover {
     position: fixed;
     top: 0;
     left: 0;
-    border-right: #eeeeee 1px solid;
+    border-right: var(--color-border) 1px solid;
   }
   aside h2 {
     margin: 10px 0 0 0;
@@ -316,6 +340,10 @@ a.advert:hover {
     overflow-x: hidden;
     overflow-y: hidden;
   }
+  main #main-content {
+    max-width: 100%;
+    width: 660px;
+  }
   main article {
     max-width: 100%;
     width: 660px;
@@ -325,7 +353,60 @@ a.advert:hover {
     padding-top: 15px;
   }
 
-  main header form {
-    float: right;
+  /* Position TOC as right sidebar on desktop - only on article pages */
+  body.article main article div.article_text div.contents {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 100vh;
+    margin: 0;
+    padding: 40px 15px 40px 15px;
+    border-left: var(--color-border) 1px solid;
+    border-radius: 0;
+    background-color: var(--color-white);
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 14px;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  /* Hide scrollbar for Chrome/Safari/Opera */
+  body.article main article div.article_text div.contents::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.article main article div.article_text div.contents p.topic-title {
+    display: none;
+  }
+
+  body.article main article div.article_text div.contents ul {
+    padding-left: 0;
+    padding-top: 30px;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  body.article main article div.article_text div.contents li {
+    margin: 8px 0;
+    line-height: 1.6em;
+  }
+
+  body.article main article div.article_text div.contents a {
+    border-bottom: 0px;
+    color: var(--color-link);
+    padding: 4px 0;
+    display: block;
+  }
+
+  body.article main article div.article_text div.contents a:hover {
+    color: var(--color-link-hover);
+  }
+
+  /* Adjust main content width when TOC is present - only on article pages */
+  body.article main:has(article div.article_text div.contents) {
+    width: 65%;
   }
 }
