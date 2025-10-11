@@ -270,6 +270,10 @@ main header form {
   color: var(--color-link);
 }
 
+#mobile-nav {
+  display: none;
+}
+
 span.avoidwrap {
   display:inline-block;
 }
@@ -305,6 +309,12 @@ a.advert:hover {
   .hidden-on-tablet {
     display: none;
   }
+
+  /* Hide main header on mobile */
+  main header {
+    display: none;
+  }
+
   aside img {
     float: left;
     margin-right: 4%;
@@ -321,13 +331,24 @@ a.advert:hover {
     margin: 0 0 15px 0;
     font-size: 14px;
   }
-  main header p {
-    font-size: 10px;
+
+  /* Show mobile nav in aside */
+  #mobile-nav {
+    display: block;
+    margin: 15px 0;
+    font-size: 12px;
   }
-  main header {
-    padding: 4%;
-    padding-top: 0px;
+
+  #mobile-nav a {
+    display: inline;
+    margin-right: 8px;
   }
+
+  #mobile-nav form {
+    display: block;
+    margin-top: 10px;
+  }
+
   main article div.article_title h1 {
     padding-top: 0px;
   }

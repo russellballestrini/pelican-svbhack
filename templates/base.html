@@ -49,6 +49,23 @@
       </a>
       <h2><a href="{{ SITEURL }}">{{ AUTHOR }}</a></h2>
       <p>{{ TAGLINE }}</p>
+
+      <!-- Mobile navigation -->
+      <div id="mobile-nav">
+        <a href="{{ SITEURL }}/random.html">Random</a> &bull;
+        <a href="{{ SITEURL }}/archives.html">Archives</a> &bull;
+        {% if FEED_ALL_ATOM %}<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">RSS</a> &bull;{% endif %}
+        {% if FEED_ALL_RSS %}<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS</a> &bull;{% endif %}
+        <a href="{{ SITEURL }}/about/">About</a> &bull;
+        <a href="{{ SITEURL }}/contact/">Contact</a>
+        <form method="get" id="mobile-search" action="https://duckduckgo.com/">
+          <input type="hidden" name="sites" value="{{ SITEURL }}"/>
+          <input type="submit" value="Search" style="display: none;" />
+          <input type="text" name="q" maxlength="255" placeholder="Search" id="search-box"/>
+          <button id="mobile-theme-toggle" type="button" onclick="toggleTheme()">Light</button>
+        </form>
+      </div>
+
       <ul class="hidden-on-tablet">
 	<br/>
 	<div class="advert">
