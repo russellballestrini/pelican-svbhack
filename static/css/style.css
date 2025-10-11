@@ -427,6 +427,7 @@ a.advert:hover {
   main #main-content {
     max-width: 100%;
     width: 660px;
+    padding-top: 40px;
   }
   main article {
     max-width: 100%;
