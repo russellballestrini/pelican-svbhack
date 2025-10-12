@@ -491,6 +491,29 @@ a.advert:hover {
     color: var(--color-link-hover);
   }
 
+  /* Comments link styled like TOC item - positioned in right sidebar */
+  body.article main article div.article_text div.toc-comments-link {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10%;
+    margin: 0;
+    padding: 8px 15px 40px 15px;
+    background-color: var(--color-white);
+    font-size: 14px;
+  }
+
+  body.article main article div.article_text div.toc-comments-link a {
+    border-bottom: 0px;
+    color: var(--color-link);
+    padding: 4px 0;
+    display: block;
+  }
+
+  body.article main article div.article_text div.toc-comments-link a:hover {
+    color: var(--color-link-hover);
+  }
+
   /* Adjust main content width when TOC is present - only on article pages */
   body.article main:has(article div.article_text div.contents) {
     width: 65%;

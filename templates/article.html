@@ -14,6 +14,11 @@
 
   <div class="article_text">
     {{ article.content }}
+    {% if REMARKBOX and '<div class="contents' in article.content %}
+    <div class="toc-comments-link">
+      <a href="#remarkbox-div">Comments</a>
+    </div>
+    {% endif %}
   </div>
 
   <div class="article_meta">
