@@ -492,8 +492,8 @@ a.advert:hover {
     color: var(--color-link-hover);
   }
 
-  /* Comments link - positioned at bottom of right sidebar */
-  body.article main article div.article_text div.toc-comments-link {
+  /* TOC addon links (Comments, etc) - positioned at bottom of right sidebar */
+  body.article div.toc-addon-links {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -505,14 +505,25 @@ a.advert:hover {
     font-size: 14px;
   }
 
-  body.article main article div.article_text div.toc-comments-link a {
+  body.article div.toc-addon-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  body.article div.toc-addon-links li {
+    margin: 8px 0;
+    line-height: 1.6em;
+  }
+
+  body.article div.toc-addon-links a {
     border-bottom: 0px;
     color: var(--color-link);
     padding: 4px 0;
     display: block;
   }
 
-  body.article main article div.article_text div.toc-comments-link a:hover {
+  body.article div.toc-addon-links a:hover {
     color: var(--color-link-hover);
   }
 
