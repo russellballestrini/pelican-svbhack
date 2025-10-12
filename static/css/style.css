@@ -499,6 +499,7 @@ a.advert:hover {
     right: 0;
     width: 10%;
     margin: 0;
+    margin-bottom: 80px;
     padding: 15px;
     border-top: 1px solid var(--color-border);
     background-color: var(--color-white);
