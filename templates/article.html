@@ -13,7 +13,11 @@
   </div>
 
   <div class="article_text">
+    {% if REMARKBOX and '<div class="contents' in article.content %}
+    {{ article.content|replace('</ul>\n</div>', '<li><a href="#remarkbox-div">Comments</a></li></ul>\n</div>') }}
+    {% else %}
     {{ article.content }}
+    {% endif %}
   </div>
 
   <div class="article_meta">
