@@ -53,7 +53,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   padding-top: 30px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 100px;
 }
 
 h1 { font-size: 2em; }
