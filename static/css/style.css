@@ -42,10 +42,6 @@
   display: inline-block;
 }
 
-html {
-  scroll-padding-top: 100px;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -56,7 +52,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 100px;
   padding-top: 30px;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 30px;
 }
 
 h1 { font-size: 2em; }
