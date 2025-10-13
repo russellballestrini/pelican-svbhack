@@ -437,13 +437,13 @@ a.advert:hover {
     padding-top: 60px;
   }
   main #main-content {
-    max-width: 100%;
-    width: 660px;
+    max-width: 660px;
+    width: 100%;
     padding-top: 40px;
   }
   main article {
-    max-width: 100%;
-    width: 660px;
+    max-width: 660px;
+    width: 100%;
     padding-top: 0;
   }
 
