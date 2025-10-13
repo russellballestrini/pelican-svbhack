@@ -117,7 +117,7 @@ aside div#user_meta {
   padding-right: 60px;
 }
 aside div#user_meta h2 {
-  margin: 15px 0 5px 0;
+  margin: 0 0 5px 0;
 }
 aside div#user_meta p {
   margin: 0 0 15px 0;
@@ -142,8 +142,7 @@ aside div#user_meta ul li a {
   color: var(--color-text-light);
 }
 main header {
-  padding: 18px 5% 18px;
-  border-bottom: var(--color-border) 1px solid;
+  padding: 18px 0;
   border-top: 0;
   font-weight: bold;
   font-size: 14px;
@@ -255,7 +254,7 @@ p.topic-title {
   border-width: 1px;
   border-style: solid;
   padding: .3em;
-  width: 190px;
+  width: 120px;
   vertical-align: middle;
 }
 
@@ -421,8 +420,9 @@ a.advert:hover {
   main header {
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: var(--color-white);
+    left: 27%;
+    width: 60%;
+    background-color: transparent;
     z-index: 100;
   }
   main #main-content {
