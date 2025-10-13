@@ -167,11 +167,8 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
 
   <script>
     function toggleTheme() {
-      // Save current scroll position and hash
-      const scrollY = window.scrollY;
+      // Save hash and temporarily remove to prevent jump
       const hash = window.location.hash;
-
-      // Temporarily remove hash to prevent jump
       if (hash) {
         history.replaceState(null, null, ' ');
       }
@@ -219,8 +216,7 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
         remarkboxIframe.src = newSrc;
       }
 
-      // Restore scroll position and hash without jumping
-      window.scrollTo(0, scrollY);
+      // Restore hash without jumping
       if (hash) {
         history.replaceState(null, null, hash);
       }
