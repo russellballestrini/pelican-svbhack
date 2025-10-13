@@ -451,8 +451,9 @@ a.advert:hover {
     padding-top: 15px;
   }
 
-  /* Position TOC as right sidebar on desktop - only on article pages */
-  body.article main article div.article_text div.contents {
+  /* Position TOC as right sidebar on desktop - on article pages and pages with TOC */
+  main article div.article_text div.contents,
+  main div#main-content div.contents {
     position: fixed;
     top: 0;
     right: 0;
@@ -472,34 +473,40 @@ a.advert:hover {
   }
 
   /* Hide scrollbar for Chrome/Safari/Opera */
-  body.article main article div.article_text div.contents::-webkit-scrollbar {
+  main article div.article_text div.contents::-webkit-scrollbar,
+  main div#main-content div.contents::-webkit-scrollbar {
     display: none;
   }
 
-  body.article main article div.article_text div.contents p.topic-title {
+  main article div.article_text div.contents p.topic-title,
+  main div#main-content div.contents p.topic-title {
     display: none;
   }
 
-  body.article main article div.article_text div.contents ul {
+  main article div.article_text div.contents ul,
+  main div#main-content div.contents ul {
     padding-left: 0;
     padding-top: 30px;
     margin: 0;
     list-style-type: none;
   }
 
-  body.article main article div.article_text div.contents li {
+  main article div.article_text div.contents li,
+  main div#main-content div.contents li {
     margin: 8px 0;
     line-height: 1.6em;
   }
 
-  body.article main article div.article_text div.contents a {
+  main article div.article_text div.contents a,
+  main div#main-content div.contents a {
     border-bottom: 0px;
     color: var(--color-link);
     padding: 4px 0;
     display: block;
   }
 
-  body.article main article div.article_text div.contents a:hover {
+  main article div.article_text div.contents a:hover,
+  main div#main-content div.contents a:hover {
     color: var(--color-link-hover);
   }
 
@@ -539,8 +546,9 @@ a.advert:hover {
     color: var(--color-link-hover);
   }
 
-  /* Adjust main content width when TOC is present - only on article pages */
-  body.article main:has(article div.article_text div.contents) {
+  /* Adjust main content width when TOC is present */
+  main:has(article div.article_text div.contents),
+  main:has(div#main-content div.contents) {
     width: 65%;
   }
 }
