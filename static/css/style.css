@@ -417,8 +417,8 @@ a.advert:hover {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-  /* Fixed header only on article pages */
-  body.article main header {
+  /* Fixed header on all pages */
+  main header {
     position: fixed;
     top: 0;
     left: 27%;
