@@ -10,6 +10,7 @@ pygments:
 	@echo "Generating pygments stylesheets..."
 	python -c "from pygments.formatters import HtmlFormatter; print(HtmlFormatter(style='monokai').get_style_defs('.highlight'))" > static/css/pygments-dark.css
 	python -c "from pygments.formatters import HtmlFormatter; print(HtmlFormatter(style='default').get_style_defs('.highlight'))" > static/css/pygments-light.css
-	@echo "Patching dark mode to remove hardcoded background..."
+	@echo "Patching to remove hardcoded backgrounds..."
 	sed -i 's/.highlight { background: #272822; color: #f8f8f2 }/.highlight { color: #f8f8f2 }/' static/css/pygments-dark.css
+	sed -i 's/.highlight { background: #f8f8f8; }/.highlight { }/' static/css/pygments-light.css
 	@echo "Done! Pygments stylesheets generated and patched."
