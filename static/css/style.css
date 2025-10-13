@@ -148,6 +148,13 @@ main header {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
+  /* Fixed by default for desktop */
+  position: fixed;
+  top: 0;
+  left: 27%;
+  width: 60%;
+  background-color: transparent;
+  z-index: 100;
 }
 main article {
   padding-left: 5%;
@@ -338,8 +345,9 @@ a.advert:hover {
     display: none;
   }
 
-  /* Hide main header on mobile */
+  /* Unfix and hide main header on mobile */
   main header {
+    position: static;
     display: none;
   }
 
@@ -417,15 +425,6 @@ a.advert:hover {
     left: 25%;
     overflow-x: hidden;
     overflow-y: hidden;
-  }
-  /* Fixed header on all pages */
-  main header {
-    position: fixed;
-    top: 0;
-    left: 27%;
-    width: 60%;
-    background-color: transparent;
-    z-index: 100;
   }
 
   /* Add padding-top to headings only on article pages for fixed header */
