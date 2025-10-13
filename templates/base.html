@@ -167,6 +167,15 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
 
   <script>
     function toggleTheme() {
+      // Save current scroll position and hash
+      const scrollY = window.scrollY;
+      const hash = window.location.hash;
+
+      // Temporarily remove hash to prevent jump
+      if (hash) {
+        history.replaceState(null, null, ' ');
+      }
+
       const root = document.documentElement;
       const desktopButton = document.getElementById('theme-toggle');
       const mobileButton = document.getElementById('mobile-theme-toggle');
@@ -208,6 +217,12 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
         }
 
         remarkboxIframe.src = newSrc;
+      }
+
+      // Restore scroll position and hash without jumping
+      window.scrollTo(0, scrollY);
+      if (hash) {
+        history.replaceState(null, null, hash);
       }
     }
 
