@@ -7,7 +7,10 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
   -->
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
+  <!-- Dark mode syntax highlighting (default) -->
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments-dark.css" id="pygments-dark">
+  <!-- Light mode syntax highlighting -->
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments-light.css" id="pygments-light" disabled>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
 
   <meta charset="utf-8" />
@@ -42,6 +45,9 @@
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'light') {
         document.documentElement.classList.add('light-mode');
+        // Switch to light mode syntax highlighting
+        document.getElementById('pygments-dark').disabled = true;
+        document.getElementById('pygments-light').disabled = false;
       }
     })();
   </script>
@@ -164,17 +170,25 @@ He enjoys casual conversation too! <a href="/contact/">contact russell</a>
       const root = document.documentElement;
       const desktopButton = document.getElementById('theme-toggle');
       const mobileButton = document.getElementById('mobile-theme-toggle');
+      const pygmentsDark = document.getElementById('pygments-dark');
+      const pygmentsLight = document.getElementById('pygments-light');
 
       if (root.classList.contains('light-mode')) {
         root.classList.remove('light-mode');
         if (desktopButton) desktopButton.textContent = 'Light';
         if (mobileButton) mobileButton.textContent = 'Light';
         localStorage.setItem('theme', 'dark');
+        // Switch to dark mode syntax highlighting
+        pygmentsDark.disabled = false;
+        pygmentsLight.disabled = true;
       } else {
         root.classList.add('light-mode');
         if (desktopButton) desktopButton.textContent = 'Dark';
         if (mobileButton) mobileButton.textContent = 'Dark';
         localStorage.setItem('theme', 'light');
+        // Switch to light mode syntax highlighting
+        pygmentsDark.disabled = true;
+        pygmentsLight.disabled = false;
       }
 
       // Reload Remarkbox iframe with new theme mode
