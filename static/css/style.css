@@ -52,7 +52,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  padding-top: 100px;
   margin-top: 0;
 }
 
@@ -118,6 +117,7 @@ aside div#user_meta {
 }
 aside div#user_meta h2 {
   margin: 0 0 5px 0;
+  padding-top: 0;
 }
 aside div#user_meta p {
   margin: 0 0 15px 0;
@@ -417,13 +417,24 @@ a.advert:hover {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-  main header {
+  /* Fixed header only on article pages */
+  body.article main header {
     position: fixed;
     top: 0;
     left: 27%;
     width: 60%;
     background-color: transparent;
     z-index: 100;
+  }
+
+  /* Add padding-top to headings only on article pages for fixed header */
+  body.article main article h1,
+  body.article main article h2,
+  body.article main article h3,
+  body.article main article h4,
+  body.article main article h5,
+  body.article main article h6 {
+    padding-top: 100px;
   }
   main #main-content {
     max-width: 100%;
